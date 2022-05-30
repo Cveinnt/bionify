@@ -1,0 +1,39 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "name": "Bionify | Read faster with bionic reading!",
+  "description": "Open source bionic reader designed to help you read faster!",
+  "author": "Vincent Wu",
+  "version": "0.0.2",
+  "manifest_version": 3,
+  "icons": {
+    "16": "src/icons/favicon-16.png",
+    "32": "src/icons/favicon-32.png",
+    "48": "src/icons/favicon-48.png",
+    "128": "src/icons/favicon-128.png"
+  },
+
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": ["http://*/", "https://*/"],
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+
+  "commands": {
+    "toggle-bionic": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y"
+      },
+      "description": "Bionify the current tab"
+    },
+    "toggle-auto-bionic": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+H"
+      },
+      "description": "Toggle auto Bionify"
+    }
+  }
+}

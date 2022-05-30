@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <h2 class="header_logo">Bionify</h2>
+    </div>
+    <div class="button-container">
+      <button id="applyButton">&#128214; Toggle Bionify</button>
+    </div>
+    <div class="button-container">
+      <button id="autoButton">Toggle Auto</button>
+    </div>
+    <div class="div-group">
+      <div class="small-group">
+        <div class="label">Exclude URL</div>
+        <input type="text" id="excludePattern" name="highlight" />
+        <div class="button-container">
+          <button id="excludePageButton">Add Pattern</button>
+        </div>
+        <div class="label">Highlighted Styles</div>
+        <input type="text" id="highlight-input" name="highlight" />
+      </div>
+      <div class="small-group">
+        <div class="label">Unhighlighted Styles</div>
+        <input type="text" id="rest-input" name="rest" />
+      </div>
+      <div class="small-group">
+        <div class="label">
+          Highlight Algorithm
+          <a
+            href="https://github.com/Cveinnt/bionify#algorithm-specification"
+            target="_blank"
+            ><b>(?)</b></a
+          >
+        </div>
+        <input type="text" id="algorithmInput" name="algorithm" />
+      </div>
+      <div class="button-container">
+        <button id="restore-button">Restore Default</button>
+      </div>
+    </div>
+
+    <!-- <a href="https//www.github.com/Cveinnt"
+      ><p style="text-align: center">GitHub</p></a
+    > -->
+    <div class="small-group">
+      <iframe
+        src="https://ghbtns.com/github-btn.html?user=cveinnt&repo=bionify&type=star&count=true"
+        frameborder="0"
+        scrolling="0"
+        width="150"
+        height="20"
+        title="Stars"
+      ></iframe>
+    </div>
+
+    <script src="popup.js" type="module"></script>
+  </body>
+</html>
