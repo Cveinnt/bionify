@@ -3,7 +3,8 @@ button {
   appearance: none;
   background-image: radial-gradient(
     100% 100% at 100% 0,
-    #2c3e50 0,
+    /* #2c3e50 0,
+    #000000 100%  */ #8c8c8c 0,
     #000000 100%
   );
   border: 0;
@@ -110,7 +111,8 @@ input {
   background: #1abc9c;
   background-image: radial-gradient(
     100% 100% at 100% 0,
-    #2c3e50 0,
+    /* #2c3e50 0,
+    #000000 100%  */ #8c8c8c 0,
     #000000 100%
   );
   color: white;

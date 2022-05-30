@@ -33,10 +33,10 @@ function updateExcludeButtonText() {
   chrome.storage.sync.get(["excludedPatterns"], (data) => {
     if (data.excludedPatterns.indexOf(currentPattern) != -1) {
       excludePageButton.innerText = "Remove Pattern";
-      setClass(excludePageButton, buttonEnabledClass);
+      setClass(excludePageButton, buttonDisabledClass);
     } else {
       excludePageButton.innerText = "Add Pattern";
-      setClass(excludePageButton, buttonDisabledClass);
+      setClass(excludePageButton, buttonEnabledClass);
     }
   });
 }
