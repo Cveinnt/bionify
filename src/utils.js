@@ -119,14 +119,43 @@ export function bionicifyPage() {
       return res;
     }
 
-    function escapeHTML(unsafe_str) {
+    var entityMap = {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+      "/": "&#x2F;",
+      "`": "&#x60;",
+      "=": "&#x3D;",
+    };
+
+    function escapeHtml(string) {
+      return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+        return entityMap[s];
+      });
+    }
+
+    function htmlUnescape(str) {
+      return str
+        .replace(/&amp;/g, "&")
+        .replace(/&quot;/g, '"')
+        .replace(/&#39;/g, "'")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&#x2F/g, "/")
+        .replace(/&#x3D;/g, "=")
+        .replace(/&#x60;/g, "`");
+    }
+
+    function sanitize(unsafe_str) {
       return unsafe_str
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
-        .replace(/\"/g, "&quot;")
-        .replace(/\'/g, "&#39;")
-        .replace(/\//g, "&#x2F;");
+        .replace(/\"/g, "&quot;");
+      // .replace(/\'/g, "&#39;");
+      // .replace(/\//g, "&#x2F;");
     }
 
     function bionicifyNode(node) {
@@ -139,7 +168,7 @@ export function bionicifyPage() {
       if (node.childNodes == undefined || node.childNodes.length == 0) {
         if (node.textContent != undefined && node.tagName == undefined) {
           var newNode = document.createElement("bionic");
-          newNode.innerHTML = bionicifyText(escapeHTML(node.textContent));
+          newNode.innerHTML = bionicifyText(sanitize(node.textContent));
           if (node.textContent.length > 20) {
             node.replaceWith(newNode);
           }

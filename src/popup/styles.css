@@ -39,6 +39,8 @@ button {
 
 body {
   margin: 0px;
+  font-family: Helvetica, Inter, -apple-system, BlinkMacSystemFont, "Roboto",
+    sans-serif;
 }
 
 button:hover {
@@ -122,4 +124,5 @@ input {
   font-family: Open Sans, Segoe UI, Helvetica Neue, Ubuntu, sans-serif;
   width: 12rem;
   font-size: 24px;
+  letter-spacing: 2px;
 }
