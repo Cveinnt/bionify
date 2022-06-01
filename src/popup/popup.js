@@ -1,5 +1,5 @@
 import {
-  bionicifyPage,
+  bionify,
   defaultHighlightSheet,
   defaultRestSheet,
   defaultAlgorithm,
@@ -85,7 +85,7 @@ chrome.storage.sync.get(
     restSheetInput.value = data.restSheet;
     algorithmInput.value = data.algorithm;
     updateAutoApplyText(data.autoApply);
-    // updateBionicToggle(data.isOn);
+    // updatebionifyToggle(data.isOn);
   }
 );
 
@@ -116,7 +116,7 @@ restoreButton.addEventListener("click", async () => {
   algorithmInput.value = defaultAlgorithm;
 });
 
-function updateBionicToggle(isOn) {
+function updatebionifyToggle(isOn) {
   if (isOn) {
     applyButton.innerText = "Bionify: On";
     setClass(applyButton, buttonEnabledClass);
@@ -131,10 +131,10 @@ applyButton.addEventListener("click", async () => {
 
   chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    function: bionicifyPage,
+    function: bionify,
   });
   chrome.storage.sync.get(["isOn"], (data) => {
-    // updateBionicToggle(!data.isOn);
+    // updatebionifyToggle(!data.isOn);
     chrome.storage.sync.set({ isOn: !data.isOn });
   });
 });

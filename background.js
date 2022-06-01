@@ -33,12 +33,12 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
 });
 
 chrome.commands.onCommand.addListener(async (command) => {
-  if (command === "toggle-auto-bionic") {
+  if (command === "toggle-auto-bionify") {
     chrome.storage.sync.get(["autoApply"], (data) => {
       chrome.storage.sync.set({ autoApply: !data.autoApply });
     });
   }
-  if (command === "toggle-bionic") {
+  if (command === "toggle-bionify") {
     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
     chrome.scripting.executeScript({

@@ -2,7 +2,7 @@ export let defaultHighlightSheet = "font-weight: 600;";
 export let defaultRestSheet = "opacity: 0.9;";
 export let defaultAlgorithm = "- 0 1 1 2 0.4";
 
-export function bionicifyPage() {
+export function bionify() {
   function parseAlgorithm(algorithm) {
     try {
       var res = {
@@ -41,11 +41,11 @@ export function bionicifyPage() {
       chrome.storage.sync.get(["highlightSheet", "restSheet"], function (data) {
         var style = document.createElement("style");
         style.type = "text/css";
-        style.id = "bionic-style-id";
+        style.id = "bionify-style-id";
         style.innerHTML =
-          ".bionic-highlight {" +
+          ".bionify-highlight {" +
           data.highlightSheet +
-          " } .bionic-rest {" +
+          " } .bionify-rest {" +
           data.restSheet +
           "}";
         document.getElementsByTagName("head")[0].appendChild(style);
@@ -53,12 +53,12 @@ export function bionicifyPage() {
     }
 
     function deleteStyleSheet() {
-      var sheet = document.getElementById("bionic-style-id");
+      var sheet = document.getElementById("bionify-style-id");
       sheet.remove();
     }
 
     function hasStyleSheet() {
-      return document.getElementById("bionic-style-id") != null;
+      return document.getElementById("bionify-style-id") != null;
     }
 
     let commonWords = [
@@ -79,7 +79,7 @@ export function bionicifyPage() {
       "my",
     ];
 
-    function bionicifyWord(word) {
+    function bionifyifyWord(word) {
       function isCommon(word) {
         return commonWords.indexOf(word) != -1;
       }
@@ -99,22 +99,22 @@ export function bionicifyPage() {
       }
 
       return (
-        '<bionic class="bionic-highlight">' +
+        '<bionify class="bionify-highlight">' +
         word.slice(0, numBold) +
-        "</bionic>" +
-        '<bionic class="bionic-rest">' +
+        "</bionify>" +
+        '<bionify class="bionify-rest">' +
         word.slice(numBold) +
-        "</bionic>"
+        "</bionify>"
       );
     }
 
-    function bionicifyText(text) {
+    function bionifyifyText(text) {
       var res = "";
       if (text.length < 10) {
         return text;
       }
       for (var word of text.split(" ")) {
-        res += bionicifyWord(word) + " ";
+        res += bionifyifyWord(word) + " ";
       }
       return res;
     }
@@ -158,7 +158,7 @@ export function bionicifyPage() {
       // .replace(/\//g, "&#x2F;");
     }
 
-    function bionicifyNode(node) {
+    function bionifyifyNode(node) {
       if (
         node.tagName === "SCRIPT" ||
         node.tagName === "STYLE" ||
@@ -167,15 +167,15 @@ export function bionicifyPage() {
         return;
       if (node.childNodes == undefined || node.childNodes.length == 0) {
         if (node.textContent != undefined && node.tagName == undefined) {
-          var newNode = document.createElement("bionic");
-          newNode.innerHTML = bionicifyText(sanitize(node.textContent));
+          var newNode = document.createElement("bionify");
+          newNode.innerHTML = bionifyifyText(sanitize(node.textContent));
           if (node.textContent.length > 20) {
             node.replaceWith(newNode);
           }
         }
       } else {
         for (var child of node.childNodes) {
-          bionicifyNode(child);
+          bionifyifyNode(child);
         }
       }
     }
@@ -184,7 +184,7 @@ export function bionicifyPage() {
       deleteStyleSheet();
     } else {
       createStylesheet();
-      bionicifyNode(document.body);
+      bionifyifyNode(document.body);
     }
   });
 }
