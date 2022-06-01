@@ -75,4 +75,4 @@ For example, here we highlight the first 40% characters of words with 5 or more 
 
 ## Credit
 
-Bionify is based on [fastread](https://github.com/ahrm/chrome-fastread).
+Bionify is a published fork of [fastread](https://github.com/ahrm/chrome-fastread).
