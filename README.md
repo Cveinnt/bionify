@@ -1,21 +1,26 @@
-# Bionify - Read Faster!
+# [Bionify - Read Faster!](https://chrome.google.com/webstore/detail/bionify-read-faster-with/gomhfpbcjfidhpffhecghfdieincgncc)
 
-![banner](src/icons/marquee.png)
+[![banner](src/icons/marquee.png)](https://chrome.google.com/webstore/detail/bionify-read-faster-with/gomhfpbcjfidhpffhecghfdieincgncc)
 
 A simple chrome extension designed to help you read faster and more efficiently.
 
-# Download
+## Download
 
-Bionify is available for download on the Chrome web store!
+Bionify is available on the Chrome web store!
 
-[GET IT HERE!](https://chrome.google.com/webstore/detail/bionify-read-faster-with/gomhfpbcjfidhpffhecghfdieincgncc)
+Get it here: https://chrome.google.com/webstore/detail/bionify-read-faster-with/gomhfpbcjfidhpffhecghfdieincgncc
 
-# Development
+## Development
 
-1. git clone https://github.com/cveinnt/bionify.git
-2. Follow https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked
+First, clone the repository
 
-# Algorithm Specification
+```
+git clone https://github.com/cveinnt/bionify.git
+```
+
+Thenm, follow [this instruction](https://developer.chrome.com/docs/extensions/mv3/getstarted/#unpacked) to develop unpacked extensions in Chrome.
+
+## Algorithm Specification
 
 We allow you to customize highlight algorithm using a string similar to this:
 
@@ -68,6 +73,6 @@ Highlight the first two character of 4 letter words.
 Unlike the previews entries, the last entry is a fractional value between 0 and 1 which specified which fraction of words that are not specified by previous rules must be highlighted.
 For example, here we highlight the first 40% characters of words with 5 or more characters.
 
-# Credit
+## Credit
 
 Bionify is based on [fastread](https://github.com/ahrm/chrome-fastread).
