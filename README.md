@@ -1,12 +1,14 @@
 # Bionify - Read Faster!
 
+![banner](src/icons/marquee.png)
+
 A simple chrome extension designed to help you read faster and more efficiently.
 
 # Download
 
 Bionify is available for download on the Chrome web store!
 
-[GET IT HERE!](https://chrome.google.com/webstore/detail/bionic-reader-read-faster/gomhfpbcjfidhpffhecghfdieincgncc)
+[GET IT HERE!](https://chrome.google.com/webstore/detail/bionify-read-faster-with/gomhfpbcjfidhpffhecghfdieincgncc)
 
 # Development
 
