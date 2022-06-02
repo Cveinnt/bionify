@@ -6,6 +6,12 @@
 
 A simple chrome extension designed to help you read faster and more efficiently.
 
+Here's an example of Bionified text to demonstrate the speed!
+
+[![read](read.png)](https://bionify.xyz)
+
+(example text from jiffy reader)
+
 ## Download
 
 Bionify is available on the Chrome web store!
