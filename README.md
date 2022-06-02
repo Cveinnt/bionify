@@ -18,6 +18,8 @@ Bionify is available on the Chrome web store!
 
 Get it here: https://chrome.google.com/webstore/detail/bionify-read-faster-with/gomhfpbcjfidhpffhecghfdieincgncc
 
+Official website: https://bionify.xyz
+
 ## Development
 
 First, clone the repository
