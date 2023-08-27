@@ -80,7 +80,7 @@ Highlight the first two character of 4 letter words.
            ^
 ```
 
-Unlike the previews entries, the last entry is a fractional value between 0 and 1 which specified which fraction of words that are not specified by previous rules must be highlighted.
+Unlike the previous entries, the last entry is a fractional value between 0 and 1 which specified which fraction of words that are not specified by previous rules must be highlighted.
 For example, here we highlight the first 40% characters of words with 5 or more characters.
 
 ## Credit
