@@ -100,10 +100,10 @@ export function bionify() {
 
       return (
         '<bionify class="bionify-highlight">' +
-        word.slice(0, numBold) +
+        escapeHtml(word.slice(0, numBold)) +
         "</bionify>" +
         '<bionify class="bionify-rest">' +
-        word.slice(numBold) +
+        escapeHtml(word.slice(numBold)) +
         "</bionify>"
       );
     }
@@ -122,40 +122,12 @@ export function bionify() {
     var entityMap = {
       "&": "&amp;",
       "<": "&lt;",
-      ">": "&gt;",
-      '"': "&quot;",
-      "'": "&#39;",
-      "/": "&#x2F;",
-      "`": "&#x60;",
-      "=": "&#x3D;",
     };
 
     function escapeHtml(string) {
-      return String(string).replace(/[&<>"'`=\/]/g, function (s) {
+      return String(string).replace(/[&<]/g, function (s) {
         return entityMap[s];
       });
-    }
-
-    function htmlUnescape(str) {
-      return str
-        .replace(/&amp;/g, "&")
-        .replace(/&quot;/g, '"')
-        .replace(/&#39;/g, "'")
-        .replace(/&lt;/g, "<")
-        .replace(/&gt;/g, ">")
-        .replace(/&#x2F/g, "/")
-        .replace(/&#x3D;/g, "=")
-        .replace(/&#x60;/g, "`");
-    }
-
-    function sanitize(unsafe_str) {
-      return unsafe_str
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/\"/g, "&quot;");
-      // .replace(/\'/g, "&#39;");
-      // .replace(/\//g, "&#x2F;");
     }
 
     function bionifyifyNode(node) {
@@ -168,7 +140,7 @@ export function bionify() {
       if (node.childNodes == undefined || node.childNodes.length == 0) {
         if (node.textContent != undefined && node.tagName == undefined) {
           var newNode = document.createElement("bionify");
-          newNode.innerHTML = bionifyifyText(sanitize(node.textContent));
+          newNode.innerHTML = bionifyifyText(node.textContent);
           if (node.textContent.length > 20) {
             node.replaceWith(newNode);
           }
