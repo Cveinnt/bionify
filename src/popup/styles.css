@@ -103,6 +103,38 @@ button.current {
   padding: 2px;
 }
 
+.settings-tab {
+  margin: 8px;
+  padding: 6px;
+  border: 1px dotted grey;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.settings-tab summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.chinese-settings {
+  margin: 8px;
+  border: 1px dotted grey;
+  border-radius: 6px;
+}
+
+.snapshot-settings {
+  margin: 8px;
+  border: 1px dotted grey;
+  border-radius: 6px;
+}
+
+.snapshot-actions {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+}
+
 input {
   width: 90%;
 }

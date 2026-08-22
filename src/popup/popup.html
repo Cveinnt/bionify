@@ -14,6 +14,10 @@
     <div class="button-container">
       <button id="autoButton">Toggle Auto</button>
     </div>
+    <label class="floating-button-setting">
+      <input type="checkbox" id="floating-button-enabled" />
+      Show floating button
+    </label>
     <div class="div-group">
       <div class="small-group">
         <div class="label">Exclude URL</div>
@@ -23,6 +27,11 @@
         </div>
         <div class="label">Highlighted Styles</div>
         <input type="text" id="highlight-input" name="highlight" />
+        <label>
+          <input type="checkbox" id="highlight-color-enabled" />
+          Highlight color
+        </label>
+        <input type="color" id="highlight-color-input" title="Highlight color" />
       </div>
       <div class="small-group">
         <div class="label">Unhighlighted Styles</div>
@@ -39,23 +48,25 @@
         </div>
         <input type="text" id="algorithmInput" name="algorithm" />
       </div>
+      <div class="small-group chinese-settings">
+        <div class="label">Chinese Settings</div>
+        <input type="text" id="chinese-settings-input" name="chineseSettings" placeholder="Gap Highlight GapOpacity BoldWeight Intensity" />
+      </div>
+      <div class="small-group snapshot-settings">
+        <div class="label">Snapshots</div>
+        <input type="text" id="snapshot-name-input" placeholder="Snapshot name" />
+        <div class="snapshot-actions">
+          <button id="save-snapshot-button">Save</button>
+          <button id="apply-snapshot-button">Apply</button>
+          <button id="delete-snapshot-button">Delete</button>
+        </div>
+        <select id="snapshot-select">
+          <option value="">Select a snapshot</option>
+        </select>
+      </div>
       <div class="button-container">
         <button id="restore-button">Restore Default</button>
       </div>
-    </div>
-
-    <!-- <a href="https//www.github.com/Cveinnt"
-      ><p style="text-align: center">GitHub</p></a
-    > -->
-    <div class="small-group">
-      <iframe
-        src="https://ghbtns.com/github-btn.html?user=cveinnt&repo=bionify&type=star&count=true"
-        frameborder="0"
-        scrolling="0"
-        width="150"
-        height="20"
-        title="Stars"
-      ></iframe>
     </div>
 
     <script src="popup.js" type="module"></script>
